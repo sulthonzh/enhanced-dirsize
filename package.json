@@ -1,24 +1,44 @@
 {
-  "name": "dirsize",
-  "version": "1.0.0",
-  "description": "Directory size analyzer with tree visualization, file type breakdown, and cleanup suggestions",
+  "name": "enhanced-dirsize",
+  "version": "2.0.0",
+  "description": "Enterprise-grade directory size analyzer with advanced analytics, monitoring, and collaboration features",
   "main": "src/index.js",
   "bin": {
-    "dirsize": "src/cli.js"
+    "dirsize": "src/cli.js",
+    "enhanced-dirsize": "src/enhanced-cli.js"
   },
   "scripts": {
     "test": "node test/test.js",
-    "dirsize": "node src/cli.js"
+    "test:enhanced": "node test/enhanced-test.js",
+    "test:all": "npm run test && npm run test:enhanced",
+    "dirsize": "node src/cli.js",
+    "enhanced-dirsize": "node src/enhanced-cli.js",
+    "start": "node src/enhanced-cli.js",
+    "dev": "nodemon src/enhanced-cli.js"
   },
-  "keywords": ["directory", "size", "analyzer", "disk", "usage", "treemap", "cleanup", "cli"],
+  "keywords": [
+    "directory", "size", "analyzer", "disk", "usage", "treemap", "cleanup", "cli",
+    "enterprise", "monitoring", "analytics", "compliance", "ci-cd", "team",
+    "optimization", "performance", "storage", "filesystem", "reporting"
+  ],
   "author": "sulthonzh",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sulthonzh/dirsize.git"
+    "url": "https://github.com/sulthonzh/enhanced-dirsize.git"
   },
   "engines": {
     "node": ">=16"
   },
-  "files": ["src/"]
+  "files": ["src/", "test/", "enterprise-config.json", "README.md"],
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "homepage": "https://github.com/sulthonzh/enhanced-dirsize#readme",
+  "bugs": {
+    "url": "https://github.com/sulthonzh/enhanced-dirsize/issues"
+  }
 }

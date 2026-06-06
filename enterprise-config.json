@@ -1,0 +1,274 @@
+{
+  "version": "2.0.0",
+  "organization": "Your Company",
+  "settings": {
+    "analysis": {
+      "maxDepth": 10,
+      "minFileSize": "1KB",
+      "defaultIgnorePatterns": [
+        "node_modules",
+        ".git",
+        ".svn",
+        ".hg",
+        ".cache",
+        ".Trash",
+        "__pycache__",
+        ".pytest_cache",
+        ".mypy_cache",
+        ".tox",
+        "target",
+        "build",
+        "dist",
+        ".next",
+        ".nuxt",
+        ".output",
+        "vendor/bundle",
+        ".terraform",
+        ".venv",
+        "venv",
+        "coverage",
+        ".DS_Store",
+        "Thumbs.db"
+      ],
+      "enableCompressionAnalysis": false,
+      "includeHiddenFiles": false
+    },
+    "reporting": {
+      "defaultFormat": "text",
+      "supportedFormats": ["text", "json", "markdown", "html"],
+      "includeRecommendations": true,
+      "includeCompliance": true,
+      "includeSystemMetrics": true,
+      "includePredictions": false
+    },
+    "monitoring": {
+      "enabled": false,
+      "interval": 300,
+      "alertThresholds": {
+        "maxFileSize": "10GB",
+        "maxDirectorySize": "50GB",
+        "maxGrowthRate": "1GB/day",
+        "minRecommendationScore": 70,
+        "maxSystemCpu": 80,
+        "maxSystemMemory": 80,
+        "maxDiskUsage": 85
+      }
+    },
+    "compliance": {
+      "enabled": true,
+      "standards": [
+        {
+          "name": "File Organization",
+          "requirement": "Well-organized directory structure",
+          "threshold": 70,
+          "weight": 0.3
+        },
+        {
+          "name": "Documentation Coverage",
+          "requirement": "Minimum 10% documentation files",
+          "threshold": 10,
+          "weight": 0.2
+        },
+        {
+          "name": "Security Standards",
+          "requirement": "Limited configuration files",
+          "threshold": 50,
+          "weight": 0.3
+        },
+        {
+          "name": "Storage Efficiency",
+          "requirement": "Optimal file distribution",
+          "threshold": 60,
+          "weight": 0.2
+        }
+      ]
+    },
+    "alerts": {
+      "enabled": true,
+      "channels": [
+        {
+          "type": "console",
+          "enabled": true
+        },
+        {
+          "type": "webhook",
+          "enabled": false,
+          "url": "",
+          "headers": {}
+        },
+        {
+          "type": "email",
+          "enabled": false,
+          "recipients": [],
+          "smtp": {}
+        },
+        {
+          "type": "slack",
+          "enabled": false,
+          "webhook": "",
+          "channel": "#alerts"
+        }
+      ],
+      "severityLevels": {
+        "critical": { "enabled": true, "minimumThreshold": 90 },
+        "high": { "enabled": true, "minimumThreshold": 70 },
+        "medium": { "enabled": true, "minimumThreshold": 50 },
+        "low": { "enabled": true, "minimumThreshold": 30 }
+      }
+    },
+    "cloud": {
+      "enabled": false,
+      "provider": "aws",
+      "configuration": {
+        "aws": {
+          "accessKeyId": "",
+          "secretAccessKey": "",
+          "region": "us-east-1",
+          "bucket": "",
+          "prefix": "dirsize-exports"
+        },
+        "azure": {
+          "connectionString": "",
+          "container": "",
+          "prefix": "dirsize-exports"
+        },
+        "gcp": {
+          "projectId": "",
+          "keyFile": "",
+          "bucket": "",
+          "prefix": "dirsize-exports"
+        }
+      },
+      "autoExport": false,
+      "exportInterval": 86400,
+      "retentionDays": 30
+    },
+    "ci_cd": {
+      "enabled": true,
+      "integration": {
+        "github": {
+          "enabled": false,
+          "repository": "",
+          "workflow": "ci.yml"
+        },
+        "gitlab": {
+          "enabled": false,
+          "project": "",
+          "pipeline": ""
+        },
+        "jenkins": {
+          "enabled": false,
+          "job": "",
+          "server": ""
+        }
+      },
+      "checks": {
+        "maxFileSize": "1GB",
+        "maxDirectorySize": "10GB",
+        "maxTotalSize": "100GB",
+        "maxUnusedPercentage": 30,
+        "requireDocumentation": true,
+        "maxWarnings": 10,
+        "maxErrors": 0
+      }
+    },
+    "team": {
+      "enabled": false,
+      "collaboration": {
+        "sharedReports": true,
+        "commentIntegration": false,
+        "approvalWorkflow": false
+      },
+      "notifications": {
+        "emailNotifications": false,
+        "slackNotifications": false,
+        "dashboardIntegration": false
+      }
+    },
+    "performance": {
+      "cacheEnabled": true,
+      "cacheTimeout": 3600,
+      "parallelScanning": true,
+      "maxConcurrentScans": 4,
+      "memoryLimit": "512MB",
+      "timeout": 300
+    },
+    "security": {
+      "dataEncryption": false,
+      "accessControl": false,
+      "auditLogging": true,
+      "dataRetention": {
+        "keepHistory": true,
+        "maxHistoryEntries": 100,
+        "cleanupInterval": 86400
+      }
+    },
+    "customizations": {
+      "fileTypeMappings": {},
+      "categoryLabels": {},
+      "cleanupRules": [
+        {
+          "pattern": "*/temp/*",
+          "action": "suggest_cleanup",
+          "reason": "Temporary files",
+          "minSize": "10MB"
+        },
+        {
+          "pattern": "*/cache/*",
+          "action": "suggest_cleanup", 
+          "reason": "Cache files",
+          "minSize": "100MB"
+        },
+        {
+          "pattern": "*_old",
+          "action": "suggest_cleanup",
+          "reason": "Old files",
+          "minSize": "1MB"
+        }
+      ],
+      "predictionModels": {
+        "enabled": false,
+        "windowSize": 30,
+        "confidenceThreshold": 70,
+        "alertOnGrowth": true,
+        "growthThreshold": "500MB/day"
+      }
+    }
+  },
+  "environments": {
+    "development": {
+      "analysis": {
+        "maxDepth": 3,
+        "monitoring": {
+          "enabled": false
+        }
+      }
+    },
+    "staging": {
+      "analysis": {
+        "maxDepth": 5,
+        "monitoring": {
+          "enabled": true,
+          "interval": 600
+        }
+      }
+    },
+    "production": {
+      "analysis": {
+        "maxDepth": 10,
+        "monitoring": {
+          "enabled": true,
+          "interval": 300
+        }
+      },
+      "alerts": {
+        "severityLevels": {
+          "critical": { "enabled": true, "minimumThreshold": 80 },
+          "high": { "enabled": true, "minimumThreshold": 60 },
+          "medium": { "enabled": true, "minimumThreshold": 40 },
+          "low": { "enabled": true, "minimumThreshold": 20 }
+        }
+      }
+    }
+  }
+}
