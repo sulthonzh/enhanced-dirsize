@@ -1,0 +1,24 @@
+{
+  "name": "dirsize",
+  "version": "1.0.0",
+  "description": "Directory size analyzer with tree visualization, file type breakdown, and cleanup suggestions",
+  "main": "src/index.js",
+  "bin": {
+    "dirsize": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node test/test.js",
+    "dirsize": "node src/cli.js"
+  },
+  "keywords": ["directory", "size", "analyzer", "disk", "usage", "treemap", "cleanup", "cli"],
+  "author": "sulthonzh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sulthonzh/dirsize.git"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "files": ["src/"]
+}
