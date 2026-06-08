@@ -8,7 +8,7 @@
     "enhanced-dirsize": "src/enhanced-cli.js"
   },
   "scripts": {
-    "test": "node test/test.js",
+    "test": "node test/test.mjs",
     "test:enhanced": "node test/enhanced-test.js",
     "test:all": "npm run test && npm run test:enhanced",
     "dirsize": "node src/cli.js",
