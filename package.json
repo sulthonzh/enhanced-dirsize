@@ -17,9 +17,25 @@
     "dev": "nodemon src/enhanced-cli.js"
   },
   "keywords": [
-    "directory", "size", "analyzer", "disk", "usage", "treemap", "cleanup", "cli",
-    "enterprise", "monitoring", "analytics", "compliance", "ci-cd", "team",
-    "optimization", "performance", "storage", "filesystem", "reporting"
+    "directory",
+    "size",
+    "analyzer",
+    "disk",
+    "usage",
+    "treemap",
+    "cleanup",
+    "cli",
+    "enterprise",
+    "monitoring",
+    "analytics",
+    "compliance",
+    "ci-cd",
+    "team",
+    "optimization",
+    "performance",
+    "storage",
+    "filesystem",
+    "reporting"
   ],
   "author": "sulthonzh",
   "license": "MIT",
@@ -30,7 +46,12 @@
   "engines": {
     "node": ">=16"
   },
-  "files": ["src/", "test/", "enterprise-config.json", "README.md"],
+  "files": [
+    "src/",
+    "enterprise-config.json",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "axios": "^1.6.0"
   },
